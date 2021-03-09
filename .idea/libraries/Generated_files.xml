@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/src/index.js" />
+        <item url="file://$PROJECT_DIR$/src/ksum/index.js" />
+        <item url="file://$PROJECT_DIR$/src/ksum/sum3.js" />
+        <item url="file://$PROJECT_DIR$/src/sort/bubble.js" />
+        <item url="file://$PROJECT_DIR$/src/sort/index.js" />
+        <item url="file://$PROJECT_DIR$/src/sort/selection.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/index.js" />
+      <root url="file://$PROJECT_DIR$/src/ksum/index.js" />
+      <root url="file://$PROJECT_DIR$/src/ksum/sum3.js" />
+      <root url="file://$PROJECT_DIR$/src/sort/bubble.js" />
+      <root url="file://$PROJECT_DIR$/src/sort/index.js" />
+      <root url="file://$PROJECT_DIR$/src/sort/selection.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

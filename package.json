@@ -4,28 +4,41 @@
   "description": "My webpack project",
   "main": "src/index.ts",
   "scripts": {
-    "debug": "node src/index.ts",
-    "build": "webpack",
+    "debug": "node -r module-alias/register src/index.ts",
+    "serve": "webpack serve ",
+    "build": "webpack build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zhuzyu",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
     "@webpack-cli/init": "^1.1.3",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "css-loader": "^5.0.2",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.22.1",
     "html-webpack-plugin": "^5.2.0",
+    "lodash": "^4.17.21",
+    "module-alias": "^2.2.2",
     "node-sass": "^5.0.0",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.0.17",
+    "ts-node": "^9.1.1",
     "tslint": "^6.1.3",
     "typescript": "^4.1.5",
-    "webpack": "^5.23.0",
+    "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",
     "workbox-webpack-plugin": "^6.1.0",
     "yargs": "^16.2.0"
+  },
+  "_moduleAliases": {
+    "@": "src"
   }
 }

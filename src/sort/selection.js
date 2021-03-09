@@ -2,10 +2,10 @@ module.exports = function sort(array) {
     if (array.length <= 1) {
         return array;
     }
-    let index = 0;
-    array.forEach((element, i, arr) => {
+    var index = 0;
+    array.forEach(function (element, i, arr) {
         if (element < arr[index]) {
-            // min = element       
+            // min = element
             index = i;
         }
     });
@@ -16,4 +16,3 @@ module.exports = function sort(array) {
     }
     return [].concat([array[0]], sort(array.slice(1)));
 };
-//# sourceMappingURL=selection.js.map
