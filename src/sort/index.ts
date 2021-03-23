@@ -4,10 +4,10 @@
   console.log('Hello World from your main file!');
 
   const example = `0 1 1 0 1 0
-1 0 0 1 1 1
-0 0 1 0 0 1
-1 0 0 1 0 1
-0 1 1 1 0 0`;
+  1 0 0 1 1 1
+  0 0 1 0 0 1
+  1 0 0 1 0 1
+  0 1 1 1 0 0`;
   const a = example.split('\n').map((item) => item.split(' '));
   console.log(a);
 
