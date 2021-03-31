@@ -1,4 +1,4 @@
-module.exports = function sort(array) {
+export function sort(array) {
     if (array.length <= 1) {
         return array;
     }
@@ -11,4 +11,5 @@ module.exports = function sort(array) {
         }
     });
     return [].concat(sort(array.slice(0, -1)), [array[length - 1]]);
-};
+}
+;

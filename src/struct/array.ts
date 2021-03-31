@@ -1,4 +1,4 @@
-module.exports = class ZArray<T> {
+export class ZArray<T> {
     private readonly stack: Array<T>;
     private top = 0;
     private readonly max: number;

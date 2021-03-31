@@ -1,5 +1,5 @@
 const sort = require('@/sort/bubble');
-module.exports = function sum3(array: Array<number>):Array<Array<number>> {
+export default function sum3(array: Array<number>):Array<Array<number>> {
   const format = sort(array);
   // const length = format.length;
   // const offset = format[0];

@@ -1,4 +1,4 @@
-module.exports = class ZList<T> {
+export class ZList<T> {
     private head:ZNode<T>;
     private tail:ZNode<T>;
 

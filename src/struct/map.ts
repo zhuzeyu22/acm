@@ -1,8 +1,6 @@
-// const ZList = require('./list');
-// import {ZList} from './list';
-const ZList = require('./list');
+import {ZList} from './list';
 
-module.exports = class ZHashMap<T> {
+export class ZHashMap<T> {
   private head;
   private length;
 
@@ -14,7 +12,7 @@ module.exports = class ZHashMap<T> {
     this.length = length;
     this.head = new Array(length);
     this.head.forEach((head, index, arr)=>{
-      arr[index] = new ZList();
+      arr[index] = new ZList<T>();
     });
   }
 

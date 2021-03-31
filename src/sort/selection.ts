@@ -1,4 +1,4 @@
-module.exports = function sort(array: Array<number>):Array<number> {
+export function sort(array: Array<number>): Array<number> {
   if (array.length <= 1) {
     return array;
   }
