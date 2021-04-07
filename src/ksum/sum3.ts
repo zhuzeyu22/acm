@@ -1,4 +1,4 @@
-const sort = require('@/sort/bubble');
+const sort = require('/src/sort/bubble');
 export default function sum3(array: Array<number>):Array<Array<number>> {
   const format = sort(array);
   // const length = format.length;

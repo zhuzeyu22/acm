@@ -1,5 +1,16 @@
-const path = require('path');
-const webpack = require('webpack');
+import * as path from 'path';
+import * as webpack from 'webpack';
+
+/*
+ * We've enabled MiniCssExtractPlugin for you. This allows your app to
+ * use css modules that will be moved into a separate CSS file instead of inside
+ * one of your module entries!
+ *
+ * https://github.com/webpack-contrib/mini-css-extract-plugin
+ *
+ */
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -12,32 +23,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
  *
  */
 
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-
-
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
 
-  plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin({
+  entry: {
+    acm: './src/index.ts',
+  },
+
+  plugins: [new webpack.ProgressPlugin(), new MiniCssExtractPlugin({filename: 'main.[contenthash].css'}), new HtmlWebpackPlugin({
     template: 'index.html',
-  }), new WorkboxWebpackPlugin.GenerateSW({
-    swDest: 'sw.js',
-    clientsClaim: true,
-    skipWaiting: false,
   })],
 
   module: {
     rules: [{
       test: /\.(ts|tsx)$/,
       loader: 'ts-loader',
-      include: path.resolve(__dirname, 'src'),
-      exclude: /node_modules/,
+      include: [path.resolve(__dirname, 'src')],
+      exclude: [/node_modules/],
     }, {
       test: /.(sa|sc|c)ss$/,
 
       use: [{
-        loader: 'style-loader',
+        loader: MiniCssExtractPlugin.loader,
       }, {
         loader: 'css-loader',
 
@@ -55,10 +62,7 @@ module.exports = {
   },
 
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts'],
   },
 
   devServer: {
