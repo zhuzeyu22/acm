@@ -1,5 +1,5 @@
-import {ZList} from '@/struct/ZList';
-const list = new ZList();
+import {ZLinkedList} from '@/struct/ZLinkedList';
+const list = new ZLinkedList();
 list.add(1);
 list.add(2);
 list.add(3);

@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-export class ZArray<T> {
+export class ZStack<T> {
     private DEFAULT_MAX_LENGTH = 100;
     stack: Array<T>;
     top = 0;
@@ -40,9 +40,5 @@ export class ZArray<T> {
       } else {
         return false;
       }
-    }
-
-    find() {
-
     }
 };

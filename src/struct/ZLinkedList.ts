@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-export class ZList<T> {
+export class ZLinkedList<T> {
     private head: ZNode<T>;
     private tail: ZNode<T>;
 
@@ -63,13 +63,6 @@ export class ZList<T> {
           return node.value;
         }
       }
-      // let node = this.head;
-      // while (node.next !== this.tail) {
-      //   node = node.next;
-      //   if (_.isEqual(node.data, data)) {
-      //     return node;
-      //   }
-      // }
       return null;
     }
 };

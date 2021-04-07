@@ -2,10 +2,10 @@
 // require('./ksum/index');
 // require('./struct/index');
 
-import {ZArray} from '@/struct/ZArray.js';
-import {ZList} from '@/struct/ZList.js';
+import {ZStack} from '@/struct/ZStack.js';
+import {ZLinkedList} from '@/struct/ZLinkedList.js';
 console.log('Hello World from your main file!');
-console.log(new ZArray<string>(2));
-console.log(new ZList<number>());
+console.log(new ZStack<string>(2));
+console.log(new ZLinkedList<number>());
 console.log('done.');
 console.log('qwe');

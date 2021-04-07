@@ -1,4 +1,4 @@
-import {ZList} from './ZList';
+import {ZLinkedList} from './ZLinkedList';
 
 export class ZHashMap<T> {
   private head;
@@ -12,7 +12,7 @@ export class ZHashMap<T> {
     this.length = length;
     this.head = new Array(length);
     this.head.forEach((head, index, arr)=>{
-      arr[index] = new ZList<T>();
+      arr[index] = new ZLinkedList<T>();
     });
   }
 
