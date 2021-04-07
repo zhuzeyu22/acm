@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="TZList.js" type="NodeJSConfigurationType" nameIsGenerated="true" node-parameters="-r module-alias/register" path-to-js-file="TZList.js" working-dir="$PROJECT_DIR$/src/test">
+    <method v="2" />
+  </configuration>
+</component>

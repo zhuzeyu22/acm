@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "My webpack project",
   "scripts": {
-    "debug:ts": "ts-node ./src/index.js",
-    "debug:node": "node ./src/index.js",
+    "debug:ts": "ts-node -r module-alias/register ./src/index.js",
+    "debug:node": "node -r module-alias/register ./src/index.js",
     "serve": "webpack serve",
     "build": "webpack",
     "clean": "rm -rf ./dist",
@@ -12,7 +12,9 @@
   },
   "author": "zhuzyu",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@types/lodash": "^4.14.168"
+  },
   "devDependencies": {
     "@babel/plugin-transform-typescript": "^7.13.0",
     "@babel/preset-typescript": "^7.13.0",
@@ -32,7 +34,6 @@
     "eslint-plugin-import": "^2.22.1",
     "html-webpack-plugin": "^5.3.1",
     "jsdoc": "^3.6.6",
-    "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^1.4.0",
     "module-alias": "^2.2.2",
     "node-sass": "^5.0.0",
@@ -49,6 +50,6 @@
     "yargs": "^16.2.0"
   },
   "_moduleAliases": {
-    "@": "./src"
+    "@": "src"
   }
 }

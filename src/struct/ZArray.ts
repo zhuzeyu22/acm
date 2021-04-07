@@ -1,6 +1,9 @@
+import * as _ from 'lodash';
+
 export class ZArray<T> {
-    private readonly stack: Array<T>;
-    private top = 0;
+    private DEFAULT_MAX_LENGTH = 100;
+    stack: Array<T>;
+    top = 0;
     private readonly max: number;
 
     /**
@@ -9,7 +12,7 @@ export class ZArray<T> {
      * @param {number} length - 栈长度
      */
     constructor(length: number) {
-      this.max = length;
+      this.max = length || this.DEFAULT_MAX_LENGTH;
       this.stack = new Array<T>(length);
     };
 
@@ -37,5 +40,9 @@ export class ZArray<T> {
       } else {
         return false;
       }
+    }
+
+    find() {
+
     }
 };

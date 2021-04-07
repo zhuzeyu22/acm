@@ -16,6 +16,11 @@ export declare class ZList<T> {
      * @return {boolean} result
      */
     remove(node: ZNode<T>): boolean;
+    [Symbol.iterator](): Generator<{
+        done: boolean;
+        value: ZNode<T>;
+    }, void, unknown>;
+    find(data: T): ZNode<T>;
 }
 /**
  * 链表元素
@@ -25,8 +30,8 @@ declare class ZNode<T> {
     next: ZNode<T>;
     data: T;
     /**
-    * 链表元素
-    */
+     * 链表元素
+     */
     constructor();
 }
 export {};

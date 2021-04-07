@@ -1,6 +1,7 @@
 export declare class ZArray<T> {
-    private readonly stack;
-    private top;
+    private DEFAULT_MAX_LENGTH;
+    stack: Array<T>;
+    top: number;
     private readonly max;
     /**
      * 栈
@@ -19,4 +20,5 @@ export declare class ZArray<T> {
      * @return {boolean} 操作成功返回 true
      */
     push(item: T): boolean;
+    find(): void;
 }

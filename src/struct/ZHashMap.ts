@@ -1,4 +1,4 @@
-import {ZList} from './list';
+import {ZList} from './ZList';
 
 export class ZHashMap<T> {
   private head;
@@ -30,6 +30,17 @@ export class ZHashMap<T> {
    * @param { ZHashMapNode } node
    */
   add(node: ZHashMapNode<any>) {
+    const hasNode = this.head[this.hash(node.key)].find(node);
+    if (hasNode) {
+      hasNode;
+    }
+  }
+
+  modify() {
+
+  }
+
+  delete(key:number) {
 
   }
 };

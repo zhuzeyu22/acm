@@ -17,6 +17,8 @@ export declare class ZHashMap<T> {
      * @param { ZHashMapNode } node
      */
     add(node: ZHashMapNode<any>): void;
+    modify(): void;
+    delete(key: number): void;
 }
 declare class ZHashMapNode<T> {
     key: number;

@@ -5,8 +5,8 @@ function sort(array) {
     if (array.length <= 1) {
         return array;
     }
-    var index = 0;
-    array.forEach(function (element, i, arr) {
+    let index = 0;
+    array.forEach((element, i, arr) => {
         if (element < arr[index]) {
             // min = element
             index = i;
