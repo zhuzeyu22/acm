@@ -1,9 +1,12 @@
-export function sort(array) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.sort = void 0;
+function sort(array) {
     if (array.length <= 1) {
         return array;
     }
-    let index = 0;
-    array.forEach((element, i, arr) => {
+    var index = 0;
+    array.forEach(function (element, i, arr) {
         if (element < arr[index]) {
             // min = element
             index = i;
@@ -16,5 +19,6 @@ export function sort(array) {
     }
     return [].concat([array[0]], sort(array.slice(1)));
 }
+exports.sort = sort;
 ;
 //# sourceMappingURL=selection.js.map

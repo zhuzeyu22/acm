@@ -7,7 +7,7 @@
     //    "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "commonjs",
     "target": "es6",
     "allowJs": true,
     "baseUrl": ".",
