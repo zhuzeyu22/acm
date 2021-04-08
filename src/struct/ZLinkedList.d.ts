@@ -1,4 +1,4 @@
-export declare class ZList<T> {
+export declare class ZLinkedList<T> {
     private head;
     private tail;
     /**

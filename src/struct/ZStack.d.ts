@@ -1,4 +1,4 @@
-export declare class ZArray<T> {
+export declare class ZStack<T> {
     private DEFAULT_MAX_LENGTH;
     stack: Array<T>;
     top: number;
@@ -20,5 +20,4 @@ export declare class ZArray<T> {
      * @return {boolean} 操作成功返回 true
      */
     push(item: T): boolean;
-    find(): void;
 }

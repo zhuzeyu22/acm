@@ -43,24 +43,17 @@ export class ZLinkedList<T> {
     }
 
     * [Symbol.iterator]() {
-      let value = this.head.next;
-      while (value !== this.tail) {
-        yield {
-          done: false,
-          value,
-        };
-        value = value.next;
+      let node = this.head.next;
+      while (node !== this.tail) {
+        yield node;
+        node = node.next;
       }
-      yield {
-        done: true,
-        value: null,
-      };
     }
 
     find(data: T):ZNode<T> {
       for (const node of this) {
-        if (_.isEqual(node.value.data, data)) {
-          return node.value;
+        if (_.isEqual(node, data)) {
+          return node;
         }
       }
       return null;

@@ -1,4 +1,5 @@
 import {ZLinkedList} from './ZLinkedList';
+import * as _ from 'lodash';
 
 export class ZHashMap<T> {
     private readonly head: Array<ZLinkedList<ZHashMapNode<T>>>;
@@ -35,23 +36,45 @@ export class ZHashMap<T> {
       set.add(node);
     }
 
-    modify(key: number, value: T) {
-      const set = this.head[this.hash(key)];
-      for (const entry of set) {
-        if (entry.value.data.key === key) {
-          entry.value.data.value = value;
-        }
+    modify(key: number, value: T): Boolean {
+      const node = this.find(key);
+      if (node) {
+        node.value = value;
+        return true;
+      } else {
+        return false;
       }
     }
 
-
-    find(key:number) {
+    find(key: number): ZHashMapNode<T> {
       const set = this.head[this.hash(key)];
-    //  for
+      for (const node of set) {
+        if (_.isEqual(node.data.key, key)) {
+          return node.data;
+        }
+      }
+      return null;
     }
 
-    delete(key: number) {
+    delete(key: number): Boolean {
+      const set = this.head[this.hash(key)];
+      for (const node of set) {
+        if (_.isEqual(node.data.key, key)) {
+          set.remove(node);
+          return true;
+        }
+      }
+      return false;
+    }
 
+    * [Symbol.iterator]() {
+      for (const set in this.head) {
+        if (this.head.hasOwnProperty(set)) {
+          for (const node of set) {
+            yield node;
+          }
+        }
+      };
     }
 };
 

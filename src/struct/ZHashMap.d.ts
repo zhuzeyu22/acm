@@ -1,6 +1,7 @@
 export declare class ZHashMap<T> {
-    private head;
+    private readonly head;
     private length;
+    private DEFAULT_MAX_HEAD_LENGTH;
     /**
      *
      * @param { number } length
@@ -16,8 +17,9 @@ export declare class ZHashMap<T> {
      *
      * @param { ZHashMapNode } node
      */
-    add(node: ZHashMapNode<any>): void;
-    modify(): void;
+    add(node: ZHashMapNode<T>): void;
+    modify(key: number, value: T): void;
+    find(key: number): void;
     delete(key: number): void;
 }
 declare class ZHashMapNode<T> {
