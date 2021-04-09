@@ -1,3 +1,5 @@
+import {swap} from '@/utils/swap';
+
 // e.g. 大根堆
 export class ZBinaryHeap {
     heap: Array<number>;
@@ -6,15 +8,9 @@ export class ZBinaryHeap {
       this.heap = new Array<number>(1);
     }
 
-    swap(a: number, b: number) {
-      this.heap[a] ^= this.heap[b];
-      this.heap[b] ^= this.heap[a];
-      this.heap[a] ^= this.heap[b];
-    }
-
     up(x: number) {
       while (x > 1 && this.heap[x] < this.heap[x / 2]) { // 这里实例符号有问题
-        this.swap(x, x / 2);
+        [this.heap[x], this.heap[x/2]] = swap(this.heap[x], this.heap[x/2]);
         x /= 2;
       }
     }
@@ -29,7 +25,7 @@ export class ZBinaryHeap {
           t++;
         }
         if (h[t] <= h[x]) break;
-        this.swap(x, t);
+        [x, t] = swap(x, t);
         x = t;
       }
     }

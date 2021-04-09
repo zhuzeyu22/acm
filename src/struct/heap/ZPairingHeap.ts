@@ -1,3 +1,4 @@
+import {swap} from '@/utils/swap';
 // 配对堆 弱类型，只有大小序，不定形式，多节点树
 // e.g. 大根堆
 export class ZPairingHeap {
@@ -9,10 +10,6 @@ export class ZPairingHeap {
     constructor() {
     }
 
-    public static swap(a: ZPairingHeap, b: ZPairingHeap) {
-      return [b, a];
-    }
-
     public static merge(a: ZPairingHeap, b: ZPairingHeap): ZPairingHeap {
       if (!a) {
         return b;
@@ -21,7 +18,7 @@ export class ZPairingHeap {
         return a;
       }
       if (a.value < b.value) {
-        [a, b] = this.swap(a, b);
+        [a, b] = swap(a, b);
       }
       a.brother = null;
       b.brother = null;
