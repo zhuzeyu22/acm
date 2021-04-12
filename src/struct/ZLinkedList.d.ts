@@ -16,10 +16,7 @@ export declare class ZLinkedList<T> {
      * @return {boolean} result
      */
     remove(node: ZNode<T>): boolean;
-    [Symbol.iterator](): Generator<{
-        done: boolean;
-        value: ZNode<T>;
-    }, void, unknown>;
+    [Symbol.iterator](): Generator<ZNode<T>, void, unknown>;
     find(data: T): ZNode<T>;
 }
 /**

@@ -18,9 +18,10 @@ export declare class ZHashMap<T> {
      * @param { ZHashMapNode } node
      */
     add(node: ZHashMapNode<T>): void;
-    modify(key: number, value: T): void;
-    find(key: number): void;
-    delete(key: number): void;
+    modify(key: number, value: T): Boolean;
+    find(key: number): ZHashMapNode<T>;
+    delete(key: number): Boolean;
+    [Symbol.iterator](): Generator<string, void, unknown>;
 }
 declare class ZHashMapNode<T> {
     key: number;

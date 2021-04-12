@@ -1,7 +1,8 @@
-export declare class ZSetUnion<T> {
+export declare class ZSetUnion {
     private DEFAULT_MAX_LENGTH;
-    private set;
+    private fa;
+    private size;
     constructor(length: number);
-    addSet(): void;
-    delSet(index: number): void;
+    find(x: number): number;
+    unionSet(x: number, y: number): void;
 }

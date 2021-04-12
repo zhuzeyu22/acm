@@ -1,5 +1,6 @@
 import {swap} from '@/utils/swap';
 
+// 左偏树
 // 大根堆举例
 export class ZLeftistHeap {
     // dist 距离，节点到最近叶子节点的距离，叶子节点的 dist 为 0
