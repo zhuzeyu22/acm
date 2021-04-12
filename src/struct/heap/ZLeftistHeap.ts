@@ -44,10 +44,11 @@ export class ZLeftistHeap {
       return ZLeftistHeap.merge(this, x);
     }
 
-    findTop() {
-      while (this.top !== this) {
-
+    public static findTop(x: ZLeftistHeap) {
+      if (x !== x.top) {
+        x.top = ZLeftistHeap.findTop(x.top);
       }
+      return x.top;
     }
 
     public static update(x: ZLeftistHeap) {
@@ -60,10 +61,17 @@ export class ZLeftistHeap {
       }
     }
 
+
     delete(x: ZLeftistHeap) {
-      ZLeftistHeap.merge(x.left, x.left);
+      const merge = ZLeftistHeap.merge(x.left, x.left);
+      merge.father = x.father;
       if (x.father) {
-        x.father;
+        if (x.father.left === x) {
+          x.father.left = merge;
+        } else {
+          x.father.right = merge;
+        }
       }
+      ZLeftistHeap.update(merge);
     }
 }

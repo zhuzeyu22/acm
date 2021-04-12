@@ -1,1 +1,1 @@
-export declare function maxNumber(numbers: Array<number>): any;
+export declare function maxNumber(numbers: Array<number>): string;

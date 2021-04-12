@@ -1,3 +1,4 @@
+// e.g. 升序排列
 export function sort(array: Array<number>): Array<number> {
   if (array.length <= 1) {
     return array;
