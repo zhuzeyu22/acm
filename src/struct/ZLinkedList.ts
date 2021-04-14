@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
 
 export class ZLinkedList<T> {
-    private head: ZNode<T>;
-    private tail: ZNode<T>;
+    head: ZNode<T>;
+    tail: ZNode<T>;
 
     /**
      * 链表
@@ -17,14 +17,16 @@ export class ZLinkedList<T> {
     /**
      * add
      * @param {*} data
+     * @param {void | ZNode} pos    // anchor
      */
-    add(data: T) {
+    add(data: T, pos: void | ZNode<T>) {
       const node = new ZNode<T>();
+      pos = pos || this.tail.pre;
       node.data = data;
-      this.tail.pre.next = node;
-      node.pre = this.tail.pre;
-      node.next = this.tail;
-      this.tail.pre = node;
+      node.pre = pos;
+      node.next = pos.next;
+      pos.next.pre = node;
+      pos.next = node;
     }
 
     /**
@@ -50,7 +52,7 @@ export class ZLinkedList<T> {
       }
     }
 
-    find(data: T):ZNode<T> {
+    find(data: T): ZNode<T> {
       for (const node of this) {
         if (_.isEqual(node, data)) {
           return node;
@@ -63,7 +65,7 @@ export class ZLinkedList<T> {
 /**
  * 链表元素
  */
-class ZNode<T> {
+export class ZNode<T> {
     pre: ZNode<T>;
     next: ZNode<T>;
     data: T;
